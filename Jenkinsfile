@@ -10,13 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project and generate an artifact
-                sh 'mvn clean package'
+               sh '/opt/homebrew/bin/mvn clean package'
             }
         }
         stage('Test with Jacoco') {
             steps {
                 // Run tests and generate the Jacoco report
-                sh 'mvn test jacoco:report'
+                sh '/opt/homebrew/bin/mvn test jacoco:report'
             }
             post {
                 always {
